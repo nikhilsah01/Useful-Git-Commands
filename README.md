@@ -4,46 +4,85 @@
 
 
 ```
-git config --global user.name 'name'   //To change the git user name
-git config --global user.email 'email@gmail.com'  //To change git email 
+Setting up git
+$ git config --global user.name "User Name"
+$ git config --global user.email "email"
 ``` 
 
 ```
-git init  //Initialize Local Git Repository
-git add <File>   //Add field to index
-git add .   //Add all the file/folder
-git status  //Check status fo working tree
-git commit -m "messages goes here"  //Commit changes  
-git push  //Push to remote repository
+Initializing a repository in an existing directory
+$ git init
+$ git add <file>
+$ git add README
+$ git commit -m 'Initial project version'
 ```
 ```
-git pull  //Pull latest from remote repository
-git clone <url>   //Clone repository
-```
-
-```
-git stage  //Stage all changes
-git rm --cached <file name>  //To unStage file
-```
-```
-esc :wq   //To come out from edit mode.
-```
-
-
-```
-git checkout <branch name>  //To Change the branch
-git branch <branch name>   //Create a branch in git
-git merge <branch name>   //Merge branch to current branch
+Checking the status of your files
+$ git status
 ```
 
 ```
-git remote  //List all the remote repository
-git remote add origin https://github.com/ksunilssah/HTML.git   //Add branch to Local
-git push -u origin master
+Staging files
+Adding a file
+$ git add filename
+Adding all files
+$ git add -A
+Adding all files changes in a directory
+$ git add .
 ```
 ```
-git remote add origin https://github.com/ksunilssah/HTML.git   //Push existing branch to github
-git push -u origin master
+create branches
+Fetching and checking out remote branches
+This will fetch all the remote branches for you.
+$ git fetch origin
+```
+
+
+```
+With the remote branches in hand, you now need to check out the branch you are interested in, giving you a local working copy:
+$ git checkout -b test origin/test
+```
+
+```
+Deleting a remote branch
+$ git branch -rd origin/branchname
+$ git push origin --delete branchname  or  $ git push origin:branchname
+```
+```
+Now merge branch to trunk/master
+$ git merge branchname
+```
+
+```
+To cancel a merge
+$ git merge --abort
+```
+
+```
+Updating a local repository with changes from a Github repository
+$ git pull origin master
+```
+
+
+```
+Git remote
+Show where 'origin' is pointing to and also tracked branches
+$ git remote 
+$ git remote add origin
+$ git remote add origin url
+```
+
+```
+Show where 'origin' is pointing to
+$ git remote -v
+
+Change the 'origin' remote's URL
+$ git remote set-url origin 
+
+Add a new 'origin'
+Usually use to 'rebase' from forks
+$ git remote add [NAME] 
+...
 ```
 
 
